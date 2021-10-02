@@ -1,0 +1,21 @@
+﻿@Model Vidley.ViewModels.RandomViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Movie.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <p>NO One Has Rented</p>
+}
+else
+{
+    <ul>    
+    @foreach (var customer in Model.Customers)
+    {
+    <li>@customer.Name</li>
+    }
+    </ul>
+}
